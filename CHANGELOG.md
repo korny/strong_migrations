@@ -1,3 +1,5 @@
+- Added support for `change_table` blocks
+
 ## 1.4.2 (unreleased)
 
 - Added `alphabetize_schema` option
