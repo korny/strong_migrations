@@ -143,11 +143,6 @@ Instead, start an index with columns that narrow down the results the most.",
 Upgrade Postgres before adding new indexes, or wrap this step in a safety_assured { ... } block
 to accept the risk.",
 
-    change_table:
-"Strong Migrations does not support inspecting what happens inside a
-change_table block, so cannot help you here. Please make really sure that what
-you're doing is safe before proceeding, then wrap it in a safety_assured { ... } block.",
-
     create_table:
 "The force option will destroy existing tables.
 If this is intended, drop the existing table first.

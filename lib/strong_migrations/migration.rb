@@ -2,6 +2,7 @@ module StrongMigrations
   module Migration
     def migrate(direction)
       strong_migrations_checker.direction = direction
+      StrongMigrations.current_migration = self
       super
       connection.begin_db_transaction if strong_migrations_checker.transaction_disabled
     end
@@ -29,8 +30,6 @@ module StrongMigrations
     def stop!(message, header: "Custom check")
       raise StrongMigrations::UnsafeMigration, "\n=== #{header} #strong_migrations ===\n\n#{message}\n"
     end
-
-    private
 
     def strong_migrations_checker
       @strong_migrations_checker ||= StrongMigrations::Checker.new(self)
