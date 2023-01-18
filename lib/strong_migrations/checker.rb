@@ -48,8 +48,6 @@ module StrongMigrations
           check_change_column(*args)
         when :change_column_null
           check_change_column_null(*args)
-        when :change_table
-          check_change_table
         when :create_join_table
           check_create_join_table(*args)
         when :create_table

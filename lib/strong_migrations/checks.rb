@@ -270,10 +270,6 @@ Then add the foreign key in separate migrations."
       end
     end
 
-    def check_change_table
-      raise_error :change_table, header: "Possibly dangerous operation"
-    end
-
     def check_create_join_table(*args)
       options = args.extract_options!
 
